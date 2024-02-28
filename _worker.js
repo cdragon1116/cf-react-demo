@@ -72,6 +72,7 @@ export default {
         let headers = new Headers(request.headers);
         headers.set('authorization', `Bearer ${token}`)
         headers.set('x-cdc-web-proxy-hit', "1")
+        headers.set('x-get-kv-duration', getkvtime + "ms")
 
         const options = {
           method: request.method,
